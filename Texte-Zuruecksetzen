@@ -10,16 +10,15 @@ then
     if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
       echo "Update erforderlich! Mit Enter bestaetigen."
       read 
-      git pull
+      git pull --quiet
       chmod 0700 Texte-Zuruecksetzen
       mv Texte-Zuruecksetzen ..
       ../Texte-Zuruecksetzen
       exit
     else
-      cd ..
       git pull
-      cp x/*.docx ~/Schreibtisch
-      cp x/*.png ~/.local/share/backgrounds
+      cp *.docx ~/Schreibtisch
+      cp *.png ~/.local/share/backgrounds
       echo "OK."
     fi
   else

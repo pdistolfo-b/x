@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "Alle Texte zuruecksetzen? Schreibe j oder n und bestaetige:"
+read shouldreplace
+if [ "$shouldreplace" = "j" ]
+then
+  echo "Probiere Zuruecksetzen..."
+  wget -q --spider --timeout=8 --tries=2 https://github.com/pdistolfo-b
+  if [ $? -eq 0 ]; then
+    cd x; git fetch
+    if [ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]; then
+      echo "Update erforderlich! Mit Enter bestaetigen."
+      read 
+      git pull
+      chmod 0700 Texte-Zuruecksetzen
+      mv Texte-Zuruecksetzen ..
+      ../Texte-Zuruecksetzen
+    else
+      cd ..
+      rm --force -R x
+      git clone https://github.com/pdistolfo-b/x --quiet
+      mv x/*.docx ~/Schreibtisch
+      mv x/*.png ~/.local/share/backgrounds
+      rm --force -R x
+      echo "OK."
+    fi
+  else
+    echo "Keine Verbindung zum Server."
+    read
+  fi
+fi
+echo "Bitte schliessen."
+

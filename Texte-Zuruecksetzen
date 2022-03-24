@@ -17,11 +17,9 @@ then
       exit
     else
       cd ..
-      rm --force -R x
-      git clone https://github.com/pdistolfo-b/x --quiet
-      mv x/*.docx ~/Schreibtisch
-      mv x/*.png ~/.local/share/backgrounds
-      rm --force -R x
+      git pull
+      cp x/*.docx ~/Schreibtisch
+      cp x/*.png ~/.local/share/backgrounds
       echo "OK."
     fi
   else

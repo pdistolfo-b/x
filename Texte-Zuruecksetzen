@@ -6,7 +6,7 @@ then
   echo "Verbindung..."
   wget -q --spider --timeout=8 --tries=2 https://github.com/pdistolfo-b
   if [ $? -eq 0 ]; then
-    cd ~/Dokumente/x; git fetch
+    cd ~/Dokumente/x; git fetch --quiet
     if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
       echo "Update erforderlich! Mit Enter bestaetigen."
       read 

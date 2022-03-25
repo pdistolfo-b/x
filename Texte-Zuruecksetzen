@@ -14,7 +14,7 @@ then
       chmod 0700 Texte-Zuruecksetzen
       mv Texte-Zuruecksetzen ..
       ../Texte-Zuruecksetzen
-      exit
+      exit 
     else
       git pull
       cp *.docx ~/Schreibtisch

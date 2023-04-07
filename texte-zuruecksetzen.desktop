@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Texte-Zuruecksetzen
+Comment=Setze alle Texte auf Originalzustand
+Exec=/home/user/Dokumente/Texte-Zuruecksetzen
+Terminal=true

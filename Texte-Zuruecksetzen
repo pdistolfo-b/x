@@ -21,8 +21,9 @@ then
       cp *.docx ~/Schreibtisch
       mkdir -p ~/.local/share/backgrounds
       cp *.png ~/.local/share/backgrounds
-      chmod 0644 texte-zuruecksetzen.desktop
       cp texte-zuruecksetzen.desktop ~/Schreibtisch
+      gio set ~/Schreibtisch/texte-zuruecksetzen.desktop metadata::trusted true
+      chmod a+x ~/Schreibtisch/texte-zuruecksetzen.desktop
       echo "OK."
     fi
   else

@@ -20,7 +20,7 @@ then
       cp *.docx ~/Schreibtisch
       mkdir -p ~/.local/share/backgrounds
       cp *.png ~/.local/share/backgrounds
-      chmod 0700 texte-zuruecksetzen.desktop
+      chmod 0644 texte-zuruecksetzen.desktop
       cp texte-zuruecksetzen.desktop ~/Schreibtisch
       echo "OK."
     fi

@@ -12,11 +12,12 @@ then
       read 
       git pull --quiet
       chmod 0700 Texte-Zuruecksetzen
-      mv Texte-Zuruecksetzen ..
+      cp Texte-Zuruecksetzen ..
       ../Texte-Zuruecksetzen
       exit 
     else
       git pull
+      cp Texte-Zuruecksetzen ..	  
       cp *.docx ~/Schreibtisch
       mkdir -p ~/.local/share/backgrounds
       cp *.png ~/.local/share/backgrounds
